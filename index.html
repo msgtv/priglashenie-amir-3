@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#FFE9F3">
+<title>Приглашение на День Рождения Амира 🎉</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&family=Lobster&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pink:#FF6B9D; --hotpink:#FF4D8D; --yellow:#FFD93D; --green:#6BCB77;
+  --blue:#4D96FF; --orange:#FF9F45; --purple:#C77DFF; --ink:#4A3B44;
+}
+*{ margin:0; padding:0; box-sizing:border-box; }
+body{
+  font-family:'Comfortaa','Comic Sans MS',system-ui,sans-serif;
+  color:var(--ink);
+  min-height:100vh; min-height:100svh;
+  display:flex; justify-content:center;
+  padding:34px 16px;
+  user-select:none; -webkit-user-select:none;
+  background:
+    radial-gradient(circle at 12px 12px, rgba(255,107,157,.16) 10px, transparent 11px),
+    radial-gradient(circle at 12px 12px, rgba(77,150,255,.13) 10px, transparent 11px),
+    linear-gradient(135deg,#FFE9F3 0%, #E7F4FF 48%, #FFF6D9 100%);
+  background-size:72px 72px, 72px 72px, auto;
+  background-attachment:fixed;
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  overflow-x:hidden;
+}
+
+/* ─── фоновые сладости ─── */
+.bg-emoji{ position:fixed; z-index:0; opacity:.28; pointer-events:none; animation:bob 5s ease-in-out infinite alternate; }
+@keyframes bob{ from{ transform:translateY(-8px) rotate(-6deg);} to{ transform:translateY(10px) rotate(8deg);} }
+
+/* ─── воздушные шарики ─── */
+.balloon{
+  position:fixed; width:62px; height:76px; z-index:1; pointer-events:none;
+  border-radius:50% 50% 48% 48% / 56% 56% 44% 44%;
+  background:
+    radial-gradient(circle at 30% 24%, rgba(255,255,255,.75), rgba(255,255,255,0) 42%),
+    var(--c);
+  animation:floaty var(--t,6s) ease-in-out var(--d,0s) infinite alternate;
+}
+.balloon::before{
+  content:''; position:absolute; bottom:-5px; left:50%; margin-left:-5px;
+  width:10px; height:10px; background:var(--c); transform:rotate(45deg); border-radius:2px;
+}
+.balloon::after{
+  content:''; position:absolute; top:calc(100% + 4px); left:50%;
+  width:2px; height:78px;
+  background:linear-gradient(rgba(74,59,68,.35), rgba(74,59,68,0));
+}
+@keyframes floaty{
+  from{ transform:translateY(-10px) rotate(-3deg); }
+  to{ transform:translateY(14px) rotate(4deg); }
+}
+.b1{--c:#FF6B9D; left:4%;  top:16%; --t:5.6s;}
+.b2{--c:#FFD93D; left:9%;  top:52%; --t:6.8s; --d:.7s;  width:52px; height:64px;}
+.b3{--c:#4D96FF; right:4%; top:14%; --t:6.2s; --d:.4s;}
+.b4{--c:#C77DFF; right:9%; top:50%; --t:7.4s; --d:1.1s; width:50px; height:62px;}
+.b5{--c:#6BCB77; left:16%; top:78%; --t:6.5s; --d:.2s;  width:44px; height:54px;}
+
+/* ─── открытка ─── */
+.card{
+  position:relative; z-index:2; margin:auto;
+  width:min(560px,100%);
+  background:#FFFDF8;
+  border-radius:34px;
+  padding:64px 34px 40px;
+  box-shadow:0 24px 70px rgba(255,77,141,.28), 0 6px 20px rgba(77,150,255,.12);
+  text-align:center;
+  animation:pop .8s cubic-bezier(.2,1.4,.4,1) both;
+}
+@keyframes pop{ from{ transform:scale(.7) translateY(30px); opacity:0;} to{ transform:scale(1) translateY(0); opacity:1;} }
+.card::before{
+  content:''; position:absolute; inset:14px;
+  border:3px dashed #FFC1DA; border-radius:24px; pointer-events:none;
+}
+
+/* флажки-гирлянда */
+.bunting{ position:absolute; top:-2px; left:30px; right:30px; display:flex; justify-content:center; gap:7px; }
+.bunting i{ width:26px; height:34px; clip-path:polygon(0 0,100% 0,50% 100%); }
+.bunting i:nth-child(5n+1){ background:var(--pink); }
+.bunting i:nth-child(5n+2){ background:var(--yellow); }
+.bunting i:nth-child(5n+3){ background:var(--blue); }
+.bunting i:nth-child(5n+4){ background:var(--purple); }
+.bunting i:nth-child(5n){ background:var(--green); }
+.bunting i:nth-child(even){ transform:translateY(4px); }
+
+/* ─── текст ─── */
+.label{ font-weight:700; letter-spacing:6px; font-size:14px; color:var(--hotpink); text-transform:uppercase; }
+.lead{ margin-top:16px; font-family:'Lobster',cursive; font-size:clamp(20px,5vw,24px); color:#8A6F7D; }
+.title{
+  font-family:'Lobster',cursive; font-weight:400; line-height:1.08; margin-top:4px;
+  font-size:clamp(38px,9vw,54px);
+  background:linear-gradient(90deg,var(--hotpink),var(--orange),var(--yellow),var(--green),var(--blue),var(--purple),var(--hotpink));
+  background-size:200% auto;
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  animation:shine 8s linear infinite;
+}
+@keyframes shine{ to{ background-position:200% center; } }
+.title .name{ display:block; font-size:1.18em; }
+
+/* ─── торт ─── */
+.cake{ position:relative; width:200px; height:158px; margin:22px auto 4px; }
+.plate{
+  position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+  width:216px; height:20px; border-radius:50%;
+  background:#DCE6FF; box-shadow:0 3px 0 rgba(74,59,68,.06);
+}
+.layer{ position:absolute; left:50%; transform:translateX(-50%); border-radius:12px; }
+.lb{ bottom:9px; width:188px; height:60px; background:#FFB3CE; }
+.lb::before{
+  content:''; position:absolute; top:0; left:0; right:0; height:22px;
+  background:radial-gradient(circle at 15px 0, #FFF3FA 13px, transparent 14px);
+  background-size:30px 22px; background-repeat:repeat-x;
+}
+.lb::after{
+  content:''; position:absolute; left:0; right:0; bottom:0; height:36px; border-radius:0 0 12px 12px;
+  background:
+    radial-gradient(circle at 24px 12px,  var(--blue)   0 3px, transparent 4px),
+    radial-gradient(circle at 62px 26px,  var(--yellow) 0 3px, transparent 4px),
+    radial-gradient(circle at 100px 10px, #fff          0 3px, transparent 4px),
+    radial-gradient(circle at 140px 28px, var(--purple) 0 3px, transparent 4px),
+    radial-gradient(circle at 170px 14px, var(--orange) 0 3px, transparent 4px);
+}
+.lt{ bottom:65px; width:140px; height:48px; background:#A8E6CF; }
+.lt::before{
+  content:''; position:absolute; top:0; left:0; right:0; height:18px;
+  background:radial-gradient(circle at 13px 0, #FFFFFF 11px, transparent 12px);
+  background-size:26px 18px; background-repeat:repeat-x;
+}
+.candle{
+  position:absolute; bottom:112px; width:9px; height:27px; border-radius:4px 4px 2px 2px;
+}
+.candle.c1{ left:calc(50% - 36px); height:24px; background:repeating-linear-gradient(-45deg,#fff 0 4px, var(--pink)   4px 8px); }
+.candle.c2{ left:calc(50% - 4.5px); height:29px; background:repeating-linear-gradient(-45deg,#fff 0 4px, var(--blue)   4px 8px); }
+.candle.c3{ left:calc(50% + 27px); height:24px; background:repeating-linear-gradient(-45deg,#fff 0 4px, var(--purple) 4px 8px); }
+.cflame{
+  position:absolute; width:11px; height:11px; left:calc(50% - 5.5px); top:-14px;
+  background:linear-gradient(135deg,#FFE45C 20%,#FF9F1C 85%);
+  border-radius:0 50% 50% 50%;
+  transform:rotate(-45deg); transform-origin:bottom center;
+  animation:flicker .5s ease-in-out infinite alternate;
+  filter:drop-shadow(0 0 6px rgba(255,159,28,.85));
+}
+.candle.c2 .cflame{ animation-delay:.15s; }
+.candle.c3 .cflame{ animation-delay:.3s; }
+@keyframes flicker{
+  from{ transform:rotate(-45deg) scale(1,1); }
+  to{ transform:rotate(-36deg) scale(.9,1.15); }
+}
+
+/* ─── возраст ─── */
+.age-cap{ margin-top:26px; font-size:13px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#8A6F7D; }
+.age{ display:flex; align-items:baseline; justify-content:center; gap:10px; margin-top:36px; }
+.age-num{
+  position:relative; display:inline-block; font-family:'Lobster',cursive; line-height:1;
+  font-size:clamp(96px,22vw,128px);
+  background:linear-gradient(180deg,var(--hotpink),var(--orange));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  animation:pulse 2.6s ease-in-out infinite;
+}
+.age-num::before{
+  content:''; position:absolute; inset:-14px; z-index:-1; border-radius:50%;
+  background:radial-gradient(circle, rgba(255,159,28,.28), transparent 70%);
+}
+@keyframes pulse{ 0%,100%{ transform:scale(1);} 50%{ transform:scale(1.04);} }
+.age-word{ font-family:'Lobster',cursive; font-size:clamp(40px,9vw,52px); color:var(--blue); }
+.flame{
+  position:absolute; width:18px; height:18px; left:calc(50% - 9px); top:-24px;
+  background:linear-gradient(135deg,#FFE45C 20%,#FF9F1C 85%);
+  border-radius:0 50% 50% 50%;
+  transform:rotate(-45deg); transform-origin:bottom center;
+  animation:flicker .5s ease-in-out infinite alternate;
+  filter:drop-shadow(0 0 8px rgba(255,159,28,.85));
+}
+
+/* ─── дата, время, место ─── */
+.chips{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:24px; }
+.chip{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:12px 22px; border-radius:999px; font-weight:700; font-size:18px;
+  box-shadow:0 6px 14px rgba(74,59,68,.08);
+}
+.chip-date{ background:#FFE9F2; border:3px solid var(--pink); color:#C13A6B; }
+.chip-time{ background:#E7F2FF; border:3px solid var(--blue); color:#2D6BC4; }
+.venue{
+  margin-top:22px; padding:20px 16px; border-radius:22px;
+  background:linear-gradient(135deg,#FFF6DE,#FFE9F2);
+  border:3px dashed var(--orange);
+}
+.venue-title{ font-size:18px; font-weight:700; }
+.venue-mall{ margin-top:7px; font-size:16px; font-weight:700; color:#8E4FC7; }
+.venue-addr{ margin-top:7px; font-size:16px; color:#6E5A65; }
+.fun{ margin-top:24px; font-family:'Lobster',cursive; font-size:clamp(19px,4.5vw,22px); color:var(--hotpink); }
+.candy-row{ margin-top:18px; font-size:26px; display:flex; justify-content:center; gap:16px; }
+.candy-row span{ display:inline-block; animation:bob 2.8s ease-in-out infinite alternate; }
+.candy-row span:nth-child(2){ animation-delay:.25s; }
+.candy-row span:nth-child(3){ animation-delay:.5s; }
+.candy-row span:nth-child(4){ animation-delay:.75s; }
+.candy-row span:nth-child(5){ animation-delay:1s; }
+
+/* ─── конфетти ─── */
+.confetto{ position:fixed; top:-4vh; z-index:3; pointer-events:none; animation:fall var(--t,9s) linear var(--d,0s) infinite; }
+@keyframes fall{ to{ transform:translateY(112vh) rotate(var(--rot,540deg)); } }
+.confetto.burst{ animation:burst .9s ease-out forwards; }
+@keyframes burst{ to{ transform:translate(var(--dx),var(--dy)) rotate(var(--rot,180deg)); opacity:0; } }
+
+/* ─── адаптив и печать ─── */
+@media (max-width:640px){
+  .card{ padding:56px 20px 34px; }
+  .b4,.b5{ display:none; }
+  .b1{ left:1%; } .b3{ right:1%; }
+  .b2{ left:2%; top:60%; width:42px; height:52px; }
+  .b4{ right:2%; top:8%; display:block; width:42px; height:52px; }
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{ animation:none!important; transition:none!important; }
+}
+@media print{
+  body{ background:#FFFDF8; padding:10px; display:block; }
+  .balloon,.bg-emoji,.confetto{ display:none!important; }
+  .card{ box-shadow:none; margin:0 auto; animation:none; }
+  @page{ margin:12mm; }
+}
+</style>
+</head>
+<body>
+
+<!-- фоновые сладости -->
+<span class="bg-emoji" style="left:-6px; top:60%; font-size:58px;">🍭</span>
+<span class="bg-emoji" style="right:22px; top:74%; font-size:44px; animation-delay:.8s;">⭐</span>
+<span class="bg-emoji" style="left:18%; top:7%; font-size:40px; animation-delay:.4s;">🍬</span>
+<span class="bg-emoji" style="right:16%; bottom:6%; font-size:48px; animation-delay:1.2s;">🧁</span>
+
+<!-- шарики -->
+<span class="balloon b1"></span><span class="balloon b2"></span><span class="balloon b3"></span>
+<span class="balloon b4"></span><span class="balloon b5"></span>
+
+<!-- ═══ ОТКРЫТКА (текст можно менять ниже) ═══ -->
+<div class="card">
+  <div class="bunting"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+  <div class="label">✨ Приглашение ✨</div>
+  <p class="lead">Приглашаю на</p>
+  <h1 class="title">День Рождения <span class="name">Амира!</span></h1>
+
+  <!-- торт -->
+  <div class="cake" aria-hidden="true">
+    <div class="plate"></div>
+    <div class="layer lb"></div>
+    <div class="layer lt"></div>
+    <div class="candle c1"><i class="cflame"></i></div>
+    <div class="candle c2"><i class="cflame"></i></div>
+    <div class="candle c3"><i class="cflame"></i></div>
+  </div>
+
+  <p class="age-cap">Амиру исполняется</p>
+  <div class="age">
+    <span class="age-num"><i class="flame"></i>3</span>
+    <span class="age-word">года</span>
+  </div>
+
+  <div class="chips">
+    <div class="chip chip-date">📅 3 октября</div>
+    <div class="chip chip-time">⏰ 18:00</div>
+  </div>
+
+  <div class="venue">
+    <p class="venue-title">🍭 «Карамельки»</p>
+    <p class="venue-mall">ТРЦ «Армада 2»</p>
+    <p class="venue-addr">📍 Нежинское шоссе, 2Б</p>
+  </div>
+
+  <p class="fun">🎉 Игры, торт, сюрпризы и море веселья — ждём тебя! 🎈</p>
+  <div class="candy-row" aria-hidden="true"><span>🍬</span><span>🧁</span><span>🍭</span><span>🎂</span><span>🍬</span></div>
+</div>
+
+<script>
+const COLORS=['#FF6B9D','#FFD93D','#6BCB77','#4D96FF','#FF9F45','#C77DFF'];
+const rnd=(a,b)=>a+Math.random()*(b-a);
+// непрерывный дождь конфетти
+for(let i=0;i<30;i++){
+  const s=document.createElement('i');
+  s.className='confetto';
+  const size=rnd(7,13);
+  s.style.cssText=`left:${rnd(0,100)}vw;width:${size}px;height:${rnd(8,15)}px;background:${COLORS[i%COLORS.length]};border-radius:${Math.random()<.4?'50%':'2px'};--t:${rnd(7,13)}s;--d:${rnd(0,12)}s;--rot:${rnd(360,900)}deg;opacity:${rnd(.7,.95)};`;
+  document.body.appendChild(s);
+}
+// салют по клику или тапу
+addEventListener('pointerdown',e=>{
+  for(let i=0;i<26;i++){
+    const s=document.createElement('i');
+    s.className='confetto burst';
+    const size=rnd(6,11);
+    s.style.cssText=`left:${e.clientX}px;top:${e.clientY}px;width:${size}px;height:${size}px;background:${COLORS[Math.floor(Math.random()*COLORS.length)]};border-radius:${Math.random()<.5?'50%':'2px'};--dx:${rnd(-130,130)}px;--dy:${rnd(-160,60)}px;--rot:${rnd(90,540)}deg;`;
+    s.addEventListener('animationend',()=>s.remove());
+    document.body.appendChild(s);
+  }
+});
+</script>
+</body>
+</html>
